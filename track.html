@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Track Order – Ben Ibe Flowers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="topbar"><nav aria-label="Account"><a class="lnk" href="track.html" aria-current="page">Track order</a><button class="lnk" data-toast="Account page is not connected yet.">My account</button><button class="lnk" data-toast="You are not signed in (demo).">Log out</button></nav></div>
+
+<header class="site-header">
+  <div class="wrap hdr">
+    <a class="logo" href="index.html" aria-label="Ben Ibe Flowers home"><img class="logo-icon" src="assets/logo-icon.png" alt="" width="68" height="48"><span><b>BEN IBE</b><small>FLOWER ARRANGEMENT SERVICES SINCE 1985</small></span></a>
+    <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="mainnav"><span></span><span></span><span></span></button>
+    <nav id="mainnav" class="mainnav" aria-label="Main">
+      <a href="index.html">Home</a><a href="#footer">About</a><a href="index.html#more">Products</a><a href="booking.html">Services</a>
+    </nav>
+    <div class="tools">
+      <form class="search" role="search" id="searchForm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="searchInput" type="search" placeholder="Search" aria-label="Search products"></form>
+      <button class="icon-btn" aria-label="Messages" data-toast="Chat is not connected yet."><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 11h8M8 15h5"/></svg></button>
+      <button class="icon-btn cart" aria-label="Cart"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4h3l2.5 11h10L21 7H7"/><circle cx="9" cy="19.5" r="1.4"/><circle cx="18" cy="19.5" r="1.4"/></svg><span id="cartCount" class="badge" hidden>0</span></button>
+    </div>
+  </div>
+</header>
+
+<section class="thero" aria-label="Order status">
+  <div class="thero-in">
+    <div><h1 id="oTitle">Track your order</h1><p class="trk" id="oTrk">Tracking Number</p></div>
+    <span class="pill" id="oPill" role="status" hidden></span>
+  </div>
+</section>
+<main id="top" class="tk-wrap">
+  <p class="tk-state" id="tkState" role="status" aria-live="polite">Loading your order…</p>
+  <div class="tk" id="tkBody" hidden>
+    <section aria-labelledby="tlH">
+      <h2 class="tl-h" id="tlH">Status Timeline</h2>
+      <ol class="tl" id="timeline"></ol>
+    </section>
+    <div class="tk-right">
+      <section class="tcard" aria-labelledby="dH"><h2 id="dH">Delivery Details</h2><div id="dBody"></div></section>
+      <section class="tcard" aria-labelledby="sH"><h2 id="sH">Order Summary</h2>
+        <div id="items"></div><div class="onote" id="noteBox"></div>
+        <dl class="tot"><div><dt>Subtotal • Delivery</dt><dd id="fee"></dd></div><div><dt>Total</dt><dd id="total"></dd></div></dl>
+      </section>
+    </div>
+  </div>
+  <form class="lookup" id="lookup" novalidate>
+    <label for="lkId">Track a different order</label>
+    <div><input id="lkId" name="order" placeholder="BIF-000123 or BKG-000045" maxlength="10" autocomplete="off" aria-describedby="lkE"><button type="submit" class="obtn">Track</button></div>
+    <p class="err" id="lkE" role="alert"></p>
+    <p class="lk-alt">Looking for a reservation? <a href="track-booking.html">Track a booking</a></p>
+  </form>
+</main>
+<footer id="footer" class="footer">
+  <div class="wrap-wide foot">
+    <div class="fbrand"><img class="flogo" src="assets/footer-logo.png" alt="Ben Ibe Flowers, since 1985" width="312" height="312"><p class="copy">© 2026 Ben Ibe Flowers</p></div>
+    <div class="f-hours"><h3>Working Hours</h3><p>Mon-Sat 8:00-6:30 / Sun 8:00-6:00</p>
+      <div class="social">
+        <button aria-label="Instagram" data-toast="Add your Instagram link in index.html."><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".8" fill="currentColor"/></svg></button>
+        <button aria-label="Facebook" data-toast="Add your Facebook link in index.html."><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-1.6 19.9v-7H7.9V12h2.5V9.800c0-2.500 1.500-3.900 3.800-3.900 1.100 0 2.200.2 2.200.2v2.500h-1.300c-1.200 0-1.600.8-1.600 1.600V12h2.800l-.4 2.900h-2.300v7A10 10 0 0 0 12 2z"/></svg></button>
+        <button aria-label="TikTok" data-toast="Add your TikTok link in index.html."><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.600 2h-3.300v13.300a2.800 2.800 0 1 1-2-2.700V9.200a6.200 6.200 0 1 0 5.300 6.100V8.800A7.300 7.300 0 0 0 20 10.200V6.900A4.300 4.300 0 0 1 16.600 2z"/></svg></button>
+      </div></div>
+    <div class="f-col wide"><h3>Our Branches</h3><p>Sto. Rosario St., Sto. Rosario,<br>Angeles City, Pampanga, Philippines</p><p>291-A Sto. Rosario St. Corner<br>Lakandula St. San Jose, Angeles<br>City, Pampanga, Philippines</p></div>
+    <div class="f-col"><h3>Site Links</h3><a href="index.html#more">Products</a><a href="booking.html">Services</a><a href="#footer">About Us</a></div>
+    <div class="f-col"><h3>Customer Care</h3><button class="lnk2" data-toast="Contact form is not connected yet.">Contact Us</button><p>Phone: 0969 210 8228</p><p>Email: <a class="u" href="mailto:benibeflowersph@gmail.com">benibeflowersph</a></p><button class="lnk2" data-modal="terms">Terms &amp; Conditions</button><button class="lnk2" data-modal="privacy">Privacy Policy</button></div>
+  </div>
+</footer>
+
+<div class="modal" id="modal" hidden><div class="backdrop" data-close></div><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="mTitle"><button class="x" data-close aria-label="Close">×</button><h2 id="mTitle"></h2><div id="mBody"></div><div class="m-actions" id="mActions"></div></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="common.js"></script>
+<script src="api.js"></script>
+<script src="tracklib.js"></script>
+<script src="track.js"></script>
+</body>
+</html>
