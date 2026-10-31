@@ -1,0 +1,123 @@
+/* ==========================================================================
+   shop/track-booking.css - html/track-booking.html - track a booking.
+   Shared look and feel: css/base.css + css/components.css.
+   ========================================================================== */
+
+.tkb {
+  width: 76vw;
+  max-width: 1460px;
+  padding-top: 70px;
+}
+
+.tk2 {
+  display: grid;
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1fr);
+  column-gap: 56px;
+  grid-template-areas: "h ." "t c";
+  align-items: start;
+}
+
+.tk2 .tl-h {
+  grid-area: h;
+  margin-bottom: 40px;
+}
+
+.tk2 .tl {
+  grid-area: t;
+}
+
+.tk2 .bcard {
+  grid-area: c;
+  margin-bottom: 0;
+  padding-bottom: 70px;
+}
+
+.tkb .todo .dot {
+  background: var(--sand);
+}
+
+.tkb .lookup {
+  margin-top: 64px;
+}
+
+.tkb .tl li {
+  min-height: 156px;
+}
+
+.tkb .tl li:last-child {
+  min-height: 60px;
+}
+
+.bcard h2 {
+  margin-bottom: 10px;
+}
+
+.bcard #rBody p {
+  padding-left: 17px;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+.bcard .kv {
+  margin-top: 20px;
+}
+
+.bcard .kv p {
+  line-height: 2;
+}
+
+.bcard .kv b {
+  font-weight: 500;
+}
+
+.bcard .onote {
+  min-height: 80px;
+  margin: 16px 0 0 17px;
+}
+
+.bcard .tot {
+  margin-top: 52px;
+  padding-left: 7px;
+}
+
+.bcard .tot div {
+  padding: 0 22px 0 0;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 1000px) {
+  .tkb {
+    width: auto;
+    max-width: 720px;
+    padding: 36px 20px 110px;
+  }
+
+  .tk2 {
+    grid-template-columns: 1fr;
+    grid-template-areas: "h" "t" "c";
+    row-gap: 10px;
+  }
+
+  .tk2 .tl-h {
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  .tkb .tl li {
+    min-height: 130px;
+  }
+
+  .bcard .onote {
+    margin-left: 0;
+  }
+
+  .bcard #rBody p {
+    padding-left: 0;
+  }
+}

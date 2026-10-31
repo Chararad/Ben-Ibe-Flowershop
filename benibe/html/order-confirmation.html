@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Order Confirmed – Ben Ibe Flowers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/chat.css">
+<link rel="stylesheet" href="../css/main/site.css">
+<link rel="stylesheet" href="../css/main/confirmation.css">
+</head>
+<body>
+<div data-bi="navbar" data-active=""></div>
+<main id="top">
+<section class="bk-hero">
+  <img src="../assets/order-hero.svg" alt="Ben Ibe wrapped bouquets" width="1600" height="400">
+  <div class="bk-hero-txt">
+    <svg class="tick" viewBox="0 0 52 52" width="52" height="52" aria-hidden="true"><circle cx="26" cy="26" r="23"/><path d="M15 27l8 8 14-16"/></svg>
+    <h1>Thank you, <em id="od-first">friend</em>! Your order is placed.</h1>
+    <p class="pill" id="od-ref">Order BIF-000000</p>
+  </div>
+</section>
+
+<section class="bk wrap-wide">
+  <div class="od-sum">
+    <h2 class="sec-h">Order Summary</h2>
+    <ul class="items" id="od-items"></ul>
+    <div class="note-box" id="od-note"></div>
+    <div class="tot"><span>Subtotal &bull; Delivery</span><b id="od-delivery"></b></div>
+    <div class="tot"><span>Total</span><b id="od-total"></b></div>
+  </div>
+  <div class="bk-left">
+    <article class="bk-card" style="--i:0"><h2>Deliver to</h2><p id="od-addr"></p></article>
+    <article class="bk-card" style="--i:1"><h2>Date and Time</h2><p id="od-when"></p></article>
+    <article class="bk-card pay" style="--i:2"><h2>Payment</h2><p id="od-pay"></p><span class="badge" id="od-paid">Paid</span></article>
+    <div class="btn-row"><button class="pill-btn" id="od-track">Track order</button><a class="pill-btn outline" href="products.html">Shop more flowers</a></div>
+    <p class="sample-note" id="od-sample" hidden>Sample order shown. Real orders appear here once checkout is connected to a backend.</p>
+  </div>
+</section>
+</main>
+<div data-bi="footer"></div>
+
+<script src="../scripts/components.js"></script>
+<script src="../scripts/chat.js"></script>
+<script src="../scripts/main/site.js"></script>
+<script src="../scripts/main/order-confirmation.js"></script>
+</body>
+</html>

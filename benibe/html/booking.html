@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Service Reservation – Ben Ibe Flowers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/chat.css">
+<link rel="stylesheet" href="../css/shop/site.css">
+<link rel="stylesheet" href="../css/shop/reservation.css">
+</head>
+<body>
+<div data-bi="navbar" data-active=""></div>
+
+<main id="top" class="bk-wrap">
+  <p class="crumbs"><a href="index.html">Homepage</a> › <span>Service Reservation</span></p>
+  <div class="bk">
+    <section aria-label="Date and details">
+      <span class="lbl">Pick a Date: <span class="date-msg" id="dateMsg" aria-live="polite"></span></span>
+      <div class="cal">
+        <div class="cal-h"><button type="button" id="prevM" aria-label="Previous month">‹</button><h2 id="calTitle" aria-live="polite"></h2><button type="button" id="nextM" aria-label="Next month">›</button></div>
+        <div class="cal-b"><div class="dow" aria-hidden="true"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div><div class="days" id="days"></div></div>
+      </div>
+      <p class="err" id="e-date" role="alert"></p>
+      <div class="acc open"><button class="acc-h" aria-expanded="true"><span>Description</span><i></i></button>
+        <div class="acc-b"><div>
+          <p class="desc">Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description</p>
+          </div></div></div>
+
+      <div class="acc open"><button class="acc-h" aria-expanded="true"><span>Ratings</span><i></i></button>
+        <div class="acc-b"><div>
+          <div class="rate-top">
+            <div><p class="s">Average customer rating</p><p class="avg">4.5/5</p><span class="stars lg" aria-label="4.5 out of 5">★★★★★</span></div>
+            <div class="bd"><p class="s">Rating Breakdown</p><div id="bars"></div></div>
+          </div>
+          <div id="reviews"></div>
+          <button class="see-more" id="seeMore">See more <i class="chev"></i></button>
+        </div></div></div>
+    </section>
+    <form class="bk-form" id="bookForm" novalidate aria-label="Service reservation details">
+      <label class="lbl" for="name">Concierge Name:</label>
+      <div class="frame"><div class="field"><input id="name" name="name" type="text" placeholder="Only accept letters" autocomplete="name" maxlength="60" aria-describedby="e-name"></div></div><p class="err" id="e-name" role="alert"></p>
+      <label class="lbl" for="phone">Concierge Contact Number:</label>
+      <div class="frame"><div class="field"><input id="phone" name="phone" type="tel" placeholder="Only accept numbers" inputmode="numeric" autocomplete="tel" maxlength="12" aria-describedby="e-phone"></div></div><p class="err" id="e-phone" role="alert"></p>
+      <label class="lbl" for="loc">Event Location:</label>
+      <div class="frame"><div class="field"><input id="loc" name="loc" type="text" placeholder="" autocomplete="street-address" maxlength="160" aria-describedby="e-loc"></div></div><p class="err" id="e-loc" role="alert"></p>
+      <label class="lbl" for="time">Event Time:</label>
+      <div class="frame"><div class="field"><input id="time" name="time" type="time" placeholder=""  aria-describedby="e-time"></div></div><p class="err" id="e-time" role="alert"></p>
+      <label class="lbl" for="guests">Expected Guest:</label>
+      <div class="frame"><div class="field"><input id="guests" name="guests" type="text" placeholder="Only accept numbers" inputmode="numeric" maxlength="5" aria-describedby="e-guests"></div></div><p class="err" id="e-guests" role="alert"></p>
+      <label class="lbl" for="qty">Expected Quantity of Bouquet/Flowers:</label>
+      <div class="frame"><div class="field"><input id="qty" name="qty" type="text" placeholder="Only accept numbers" inputmode="numeric" maxlength="5" aria-describedby="e-qty"></div></div><p class="err" id="e-qty" role="alert"></p>
+      <label class="lbl" for="type">Type of Event:</label>
+      <div class="frame"><div class="sel"><select id="type" aria-describedby="e-type"><option value="" selected disabled></option><option>Wedding</option><option>Birthday</option><option>Debut</option><option>Anniversary</option><option>Corporate event</option><option>Funeral / Memorial</option><option>Other</option></select></div></div><p class="err" id="e-type" role="alert"></p>
+      <label class="lbl" for="notes">Notes to the shop (optional):</label>
+      <textarea id="notes" rows="7" maxlength="400"></textarea>
+      <button type="submit" class="btn dark submit">Submit</button>
+    </form>
+  </div>
+</main>
+<div data-bi="footer"></div>
+
+<div class="modal" id="modal" hidden><div class="backdrop" data-close></div><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="mTitle"><button class="x" data-close aria-label="Close">×</button><h2 id="mTitle"></h2><div id="mBody"></div><div class="m-actions" id="mActions"></div></div></div>
+<script src="../scripts/components.js"></script>
+<script src="../scripts/chat.js"></script>
+<script src="../scripts/shop/common.js"></script>
+<script src="../scripts/shop/api.js"></script>
+<script src="../scripts/shop/reservation.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+/* ==========================================================================
+   admin/staff.css - admin/staff
+   Shared look and feel: css/base.css + css/components.css.
+   ========================================================================== */
+
+.sform .mode {
+  margin-bottom: 6px;
+  font-size: 12px;
+  color: #6d645c;
+}
+
+.sf {
+  margin-bottom: 6px;
+}
+
+.sf label {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 13px;
+  color: #2b2420;
+}
+
+.sf input,
+.sf select {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  font-size: 14px;
+  color: #2b2420;
+  border: 1px solid #8f7e6e;
+  border-radius: 2px;
+  background: #fffbea;
+  transition: box-shadow 0.2s;
+}
+
+.sf select {
+  background: #fffbea url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none' stroke='%23555' stroke-width='1.4'%3E%3Cpath d='m1 1 4 4 4-4'/%3E%3C/svg%3E") right 12px center no-repeat;
+  appearance: none;
+  cursor: pointer;
+}
+
+.sf input:focus,
+.sf select:focus {
+  outline: 0;
+  box-shadow: 0 0 0 3px var(--sand);
+}
+
+.sf input[aria-invalid=true],
+.sf select[aria-invalid=true] {
+  border-color: #c0392b;
+}
+
+.sform .err {
+  min-height: 0;
+  margin: 2px 0 0;
+  font-size: 11.5px;
+}
+
+.pwrow {
+  display: flex;
+  gap: 6px;
+}
+
+.pwrow input {
+  flex: 1;
+  min-width: 0;
+}
+
+.mini-b {
+  flex: none;
+  height: 40px;
+  padding: 0 10px;
+  font-size: 12px;
+  color: #2b2420;
+  border: 1px solid #8f7e6e;
+  border-radius: 2px;
+  background: #fff;
+  transition: background 0.2s;
+}
+
+.mini-b:hover {
+  background: var(--sand);
+}
+
+.hint {
+  margin-top: 3px;
+  font-size: 11px;
+  color: var(--mute);
+  line-height: 1.35;
+}
+
+.acc {
+  padding: 0;
+  margin: 12px 0 4px;
+  border: 0;
+}
+
+.acc legend {
+  margin-bottom: 6px;
+  padding: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.ck {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 8px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.ck input {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  accent-color: #5e463a;
+  cursor: pointer;
+}
+
+.active-ck {
+  margin-top: 6px;
+  padding-top: 12px;
+  border-top: 1px solid #e6dfd4;
+}
+
+.sform .dact.c3 {
+  margin-top: 18px;
+}
+
+.vm {
+  grid-template-columns: 110px minmax(0, 1fr);
+  font-size: 14px;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 560px) {
+  .pwrow {
+    flex-wrap: wrap;
+  }
+
+  .pwrow input {
+    flex: 1 1 100%;
+  }
+}

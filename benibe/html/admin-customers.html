@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Customers – Ben Ibe Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/shop/site.css">
+<link rel="stylesheet" href="../css/admin/shell.css">
+<link rel="stylesheet" href="../css/admin/customers.css">
+</head>
+<body class="admin">
+<div data-bi="sidebar" data-variant="admin" data-active="customers"></div>
+
+<div class="shell">
+  <header class="ah">
+    <button type="button" class="ah-burger" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <div class="ah-title"><h1>CUSTOMERS</h1><p id="greet">Blooming Day, Admin Name!</p></div>
+    <div class="ah-tools">
+      <form class="search" role="search" id="adminSearchForm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="adminSearch" type="search" placeholder="Search" aria-label="Search customers by name, email or phone" autocomplete="off"></form>
+      <div class="pw"><button type="button" class="bell" id="bellBtn" aria-label="Notifications" aria-expanded="false" aria-controls="bellPop"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 17V11a6 6 0 0 1 12 0v6l1.500 2h-15z"/><path d="M10 21h4"/></svg><i class="rdot" id="bellDot" hidden></i></button>
+        <div class="pop" id="bellPop" hidden><h2>Notifications</h2><ul id="bellList"><li class="muted">Loading…</li></ul></div></div>
+      <div class="pw"><button type="button" class="me" id="meBtn" aria-expanded="false" aria-controls="mePop"><span class="av-w" id="avSm"><svg class="av" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="24" fill="#c9ccd3"/><circle cx="24" cy="19" r="8" fill="#6b7280"/><path d="M8 42c1-8 8-12 16-12s15 4 16 12a24 24 0 0 1-32 0z" fill="#6b7280"/></svg></span><span class="who"><b id="meName">Admin Name</b><small id="meRole">Administrator</small><small class="on"><i></i>Online</small></span><svg class="chev2" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 9 7 7 7-7"/></svg></button>
+        <div class="pop" id="mePop" hidden><a href="admin-profile.html">Profile Settings</a><a href="index.html">View storefront</a><button type="button" data-toast="Log out needs the backend (sessions).">Log out</button></div></div>
+    </div>
+  </header>
+  <main class="am og" id="main">
+    <div class="otop">
+      <div class="otools left">
+        <form class="idsearch csearch" id="cForm" role="search"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="cq" type="search" placeholder="Search name, email, phone" aria-label="Search name, email or phone" maxlength="60" autocomplete="off"></form>
+        <label class="tsel"><span class="sr-only">Filter by location</span><select id="fLoc"><option value="">Location</option></select></label>
+        <label class="tsel"><span class="sr-only">Filter by status</span><select id="fSt"><option value="">Status</option><option value="active">Active</option><option value="inactive">Inactive</option></select></label>
+      </div>
+      <button type="button" class="tbtn exp" id="exportBtn">Export</button>
+    </div>
+
+    <div class="ogrid">
+      <section class="dcard" aria-labelledby="acH">
+        <h2 class="aoh" id="acH">All Customers (…)</h2>
+        <div class="tw"><table class="dt ot ct"><caption class="sr-only">Customers</caption><thead><tr><th scope="col">ID</th><th scope="col">Name</th><th scope="col">Email</th><th scope="col">Phone</th><th scope="col">Location</th><th scope="col">Orders</th><th scope="col">Status</th><th scope="col">Actions</th></tr></thead><tbody id="cBody" aria-live="polite"></tbody></table></div>
+        <nav class="pager" id="pager" aria-label="Pagination"></nav>
+      </section>
+      <aside class="odetail" id="detail" aria-label="Customer details" aria-live="polite"><p class="muted-p">Select a customer to see their details.</p></aside>
+    </div>
+  </main>
+</div>
+
+<div class="modal" id="modal" hidden><div class="backdrop" data-close></div><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="mTitle"><button class="x" data-close aria-label="Close">×</button><h2 id="mTitle"></h2><div id="mBody"></div><div class="m-actions" id="mActions"></div></div></div>
+<script src="../scripts/components.js"></script>
+<script src="../scripts/shop/common.js"></script>
+<script src="../scripts/shop/api.js"></script>
+<script src="../scripts/admin/shell.js"></script>
+<script src="../scripts/admin/customers.js"></script>
+</body>
+</html>

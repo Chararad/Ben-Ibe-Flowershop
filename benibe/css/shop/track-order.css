@@ -1,0 +1,46 @@
+/* ==========================================================================
+   shop/track-order.css - html/track.html - track an order.
+   Shared look and feel: css/base.css + css/components.css.
+   ========================================================================== */
+
+.tk {
+  display: grid;
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1fr);
+  gap: 30px;
+  align-items: start;
+}
+
+#dBody p {
+  padding-left: 17px;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.tcard .oi {
+  grid-template-columns: 100px minmax(0, 1fr) auto;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 1000px) {
+  .tk {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 560px) {
+  .tcard .oi {
+    grid-template-columns: 72px minmax(0, 1fr) auto;
+    gap: 12px;
+  }
+
+  .tcard .oi img {
+    width: 72px;
+    height: 72px;
+  }
+}

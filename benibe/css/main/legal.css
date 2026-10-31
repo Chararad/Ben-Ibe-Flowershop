@@ -1,0 +1,140 @@
+/* ==========================================================================
+   main/legal.css - Terms & Conditions and Privacy Policy pages.
+   Shared look and feel: css/base.css + css/components.css.
+   ========================================================================== */
+
+.tools {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.copy {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+}
+
+.legal {
+  width: min(82rem, 92%);
+  margin: 2.5rem auto 5rem;
+}
+
+.legal h1 {
+  margin-bottom: 2rem;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #5a4033;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
+}
+
+.lsec {
+  margin-bottom: 1.5rem;
+}
+
+.lsec .ico {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  margin: 0 0 -3px 0.6rem;
+  fill: none;
+  stroke: #5a4033;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform var(--ease);
+}
+
+.lsec:hover .ico {
+  transform: rotate(-6deg) scale(1.1);
+}
+
+.lcard {
+  padding: 1rem 1.3rem 1.1rem;
+  background: var(--sand);
+  border-radius: 10px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.25);
+  transition: transform var(--ease), box-shadow var(--ease);
+}
+
+.lsec:hover .lcard {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
+}
+
+.lcard h2 {
+  margin-bottom: 0.4rem;
+  font-size: clamp(1.05rem, 1.35vw, 1.65rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.lcard ul {
+  padding-left: 1rem;
+  font-size: clamp(0.85rem, 1.1vw, 1.35rem);
+  color: #444;
+  line-height: 1.55;
+}
+
+.lcard li {
+  margin-bottom: 0.1rem;
+}
+
+.pol .intro {
+  margin-bottom: 2rem;
+}
+
+.pol section {
+  margin-bottom: 2rem;
+}
+
+.pol h2 {
+  margin-bottom: 0.9rem;
+  font-size: clamp(1.15rem, 1.5vw, 1.8rem);
+  font-weight: 600;
+  color: #5a4033;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.pol h3 {
+  margin-top: 0.5rem;
+  font-size: clamp(1.05rem, 1.4vw, 1.7rem);
+  font-weight: 600;
+  color: #5a4033;
+}
+
+.pol ul {
+  padding-left: 1.4rem;
+  margin: 0.2rem 0 0.8rem;
+}
+
+.pol .sub {
+  margin-left: 2rem;
+}
+
+.pol a {
+  text-decoration: underline;
+  transition: color var(--ease);
+}
+
+.pol a:hover {
+  color: var(--red);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 720px) {
+  .tools {
+    order: 3;
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .pol .sub {
+    margin-left: 0.6rem;
+  }
+}

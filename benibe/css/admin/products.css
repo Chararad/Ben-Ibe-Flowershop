@@ -1,0 +1,114 @@
+/* ==========================================================================
+   admin/products.css - admin/products
+   Shared look and feel: css/base.css + css/components.css.
+   ========================================================================== */
+
+.pg {
+  padding: 44px 38px 70px;
+}
+
+.tbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.tbar.second {
+  margin-top: 46px;
+}
+
+.fsel {
+  min-width: 96px;
+  height: 28px;
+}
+
+.acts {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.addb {
+  padding: 3px 12px;
+  color: var(--brown);
+  font-size: 12.5px;
+  font-weight: 500;
+  border: 1px solid var(--brown);
+  border-radius: 4px;
+  background: var(--cream);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.addb:hover {
+  background: var(--sand);
+  transform: translateY(-1px);
+}
+
+.card2 {
+  max-width: 1090px;
+}
+
+.pt {
+  min-width: 980px;
+}
+
+.pid {
+  color: #4a423c;
+}
+
+.ctr {
+  width: 64px;
+  text-align: center !important;
+}
+
+.dt td.lowst {
+  color: #e5171f;
+  font-weight: 500;
+}
+
+.ib {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  color: #4d4540;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.ib:hover {
+  background: #f3e9da;
+  transform: scale(1.1);
+}
+
+.ib[data-act=del]:hover {
+  color: #e5171f;
+  background: #fde8e8;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .pg {
+    padding: 24px 14px 70px;
+  }
+
+  .acts {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 560px) {
+  .acts {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .tbar.second {
+    margin-top: 30px;
+  }
+}

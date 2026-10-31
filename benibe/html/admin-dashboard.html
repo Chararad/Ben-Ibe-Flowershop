@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Dashboard – Ben Ibe Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/shop/site.css">
+<link rel="stylesheet" href="../css/admin/shell.css">
+<link rel="stylesheet" href="../css/admin/dashboard.css">
+</head>
+<body class="admin">
+<div data-bi="sidebar" data-variant="admin" data-active="dashboard"></div>
+
+<div class="shell">
+  <header class="ah">
+    <button type="button" class="ah-burger" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <div class="ah-title"><h1>DASHBOARD</h1><p id="greet">Blooming Day, Admin Name!</p></div>
+    <div class="ah-tools">
+      <form class="search" role="search" id="adminSearchForm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="adminSearch" type="search" placeholder="Search" aria-label="Search orders and deliveries" autocomplete="off"></form>
+      <div class="pw"><button type="button" class="bell" id="bellBtn" aria-label="Notifications" aria-expanded="false" aria-controls="bellPop"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 17V11a6 6 0 0 1 12 0v6l1.500 2h-15z"/><path d="M10 21h4"/></svg><i class="rdot" id="bellDot" hidden></i></button>
+        <div class="pop" id="bellPop" hidden><h2>Notifications</h2><ul id="bellList"><li class="muted">Loading…</li></ul></div></div>
+      <div class="pw"><button type="button" class="me" id="meBtn" aria-expanded="false" aria-controls="mePop"><span class="av-w" id="avSm"><svg class="av" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="24" fill="#c9ccd3"/><circle cx="24" cy="19" r="8" fill="#6b7280"/><path d="M8 42c1-8 8-12 16-12s15 4 16 12a24 24 0 0 1-32 0z" fill="#6b7280"/></svg></span><span class="who"><b id="meName">Admin Name</b><small id="meRole">Administrator</small><small class="on"><i></i>Online</small></span><svg class="chev2" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 9 7 7 7-7"/></svg></button>
+        <div class="pop" id="mePop" hidden><a href="admin-profile.html">Profile Settings</a><a href="index.html">View storefront</a><button type="button" data-toast="Log out needs the backend (sessions).">Log out</button></div></div>
+    </div>
+  </header>
+  <main class="am dash" id="main">
+    <section class="stats" id="stats" aria-label="Today at a glance"><p class="muted-p">Loading…</p></section>
+    <div class="dgrid">
+      <div class="dcol">
+        <section class="dcard" aria-labelledby="soH">
+          <div class="dh"><h2 id="soH">Sales Overview</h2>
+            <select id="period" class="psel" aria-label="Sales period"><option value="daily">daily</option><option value="weekly">weekly</option><option value="monthly" selected>monthly</option></select></div>
+          <div class="chart" id="chart" tabindex="0" role="group" aria-label="Sales line chart. Use the left and right arrow keys to read each point."><div class="ctip" id="ctip" hidden></div></div>
+          <p class="sr-only" id="chartLive" aria-live="polite"></p>
+        </section>
+        <section class="dcard" aria-labelledby="roH">
+          <div class="dh"><h2 id="roH">Recent Orders</h2><a class="vall" href="admin-orders.html">View All Orders →</a></div>
+          <div class="tw"><table class="dt rt"><thead><tr><th scope="col">Order ID</th><th scope="col">Customer</th><th scope="col">Product</th><th scope="col">Amount</th><th scope="col">Payment</th><th scope="col">Delivery</th><th scope="col">Status</th></tr></thead><tbody id="recent"></tbody></table></div>
+        </section>
+      </div>
+      <div class="dcol">
+        <section class="dcard" aria-labelledby="ttH">
+          <div class="dh"><h2 id="ttH">Today’s Transaction</h2><span class="count" id="txCount" aria-label="Total transactions today">–</span></div>
+          <div class="tw"><table class="dt tt"><thead><tr><th scope="col">Customer</th><th scope="col">Time</th><th scope="col">Location</th><th scope="col">Status</th></tr></thead><tbody id="tx"></tbody></table></div>
+          <p class="dfoot"><a class="vall" href="admin-orders.html?status=out_for_delivery">View All Deliveries →</a></p>
+        </section>
+        <div class="brow">
+          <section class="dcard low" aria-labelledby="lsH">
+            <div class="lsh"><span class="flag"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e5171f" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M6 21V4h12l-2.500 4.500L18 13H6"/></svg></span><h2 id="lsH">Low Stock Alert</h2></div>
+            <ul id="lowList" class="ll"></ul>
+          </section>
+          <section class="dcard qa" aria-labelledby="qaH"><h2 id="qaH">Quick Actions</h2>
+            <button type="button" class="qbtn pink" id="addProduct">+ Add Product</button>
+            <button type="button" class="qbtn purple" id="restockBtn">+ Restock Flowers</button></section>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<div class="modal" id="modal" hidden><div class="backdrop" data-close></div><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="mTitle"><button class="x" data-close aria-label="Close">×</button><h2 id="mTitle"></h2><div id="mBody"></div><div class="m-actions" id="mActions"></div></div></div>
+<script src="../scripts/components.js"></script>
+<script src="../scripts/shop/common.js"></script>
+<script src="../scripts/shop/api.js"></script>
+<script src="../scripts/admin/shell.js"></script>
+<script src="../scripts/admin/dashboard.js"></script>
+</body>
+</html>

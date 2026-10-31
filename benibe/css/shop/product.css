@@ -1,0 +1,120 @@
+/* ==========================================================================
+   shop/product.css - html/product.html - product page with order form.
+   Shared look and feel: css/base.css + css/components.css.
+   ========================================================================== */
+
+.wrap {
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.thumbs {
+  grid-area: t;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  width: 64px;
+  margin-left: -22px;
+}
+
+.main-img img {
+  object-fit: cover;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s var(--ease), opacity 0.25s;
+}
+
+.main-img:hover img {
+  transform: scale(1.04);
+}
+
+.info {
+  max-width: 680px;
+  margin-top: 0;
+}
+
+.rating-line {
+  width: 250px;
+  padding-bottom: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1;
+  border-bottom: 1px solid var(--ink);
+}
+
+.frame.sm {
+  width: 285px;
+  max-width: 100%;
+}
+
+.photo-in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  overflow: hidden;
+  height: 136px;
+  font-size: 11px;
+  background: #fff;
+  border: 1px solid var(--brown);
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.photo:hover .photo-in {
+  background: #fdf6ec;
+}
+
+.photo-in img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.cta {
+  display: flex;
+  gap: 10px;
+  margin-top: 50px;
+}
+
+.card .im {
+  overflow: hidden;
+  height: 139px;
+  margin: 3px 0 1px;
+}
+
+.empty {
+  grid-column: 1/-1;
+  color: var(--brown);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 560px) {
+  .thumbs {
+    margin-left: 0;
+  }
+
+  .main-img {
+    width: calc(100% - 6px);
+  }
+
+  .cta {
+    flex-direction: column;
+  }
+
+  .frame.sm {
+    width: 100%;
+  }
+
+  .wrap {
+    padding: 0 14px;
+  }
+}

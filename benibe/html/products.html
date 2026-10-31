@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Products – Ben Ibe Flowers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/chat.css">
+<link rel="stylesheet" href="../css/main/site.css">
+<link rel="stylesheet" href="../css/main/products.css">
+</head>
+<body>
+<div data-bi="navbar" data-active="products"></div>
+<main class="wrap shop-wrap" id="top">
+  <h1 class="shop-title">PRODUCTS</h1>
+  <button class="filter-toggle" id="filter-toggle" aria-expanded="false" aria-controls="filters">Show filters</button>
+  <div class="shop">
+    <aside class="filters" id="filters" aria-label="Product filters"></aside>
+    <section class="results" aria-label="Product results">
+      <p class="sr" id="count" aria-live="polite"></p>
+      <div class="grid" id="product-grid" data-static></div>
+      <nav class="pager" id="pager" aria-label="Pagination"></nav>
+    </section>
+  </div>
+</main>
+<div data-bi="footer"></div>
+
+<script src="../scripts/components.js"></script>
+<script src="../scripts/chat.js"></script>
+<script src="../scripts/main/site.js"></script>
+<script src="../scripts/main/products.js"></script>
+</body>
+</html>

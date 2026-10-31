@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Our Services – Ben Ibe Flowers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/chat.css">
+<link rel="stylesheet" href="../css/main/site.css">
+<link rel="stylesheet" href="../css/main/services.css">
+</head>
+<body>
+<div data-bi="navbar" data-active="services"></div>
+<main id="top">
+<section class="svc-hero">
+  <img src="../assets/svc-hero.svg" alt="Ben Ibe florist arranging bouquets" width="1600" height="400">
+  <div class="svc-hero-txt"><h1>Our Services</h1>
+  <p>Beyond our everyday arrangements and gifts, Ben Ibe Flowers brings the joy of flowers to your celebrations and gatherings. Add a Bloom Cart to your event for a hands-on flower experience, or join a Flower Workshop to learn how to arrange with our team. Send us your booking and we'll take care of the rest!</p></div>
+</section>
+
+<section class="svc-cards wrap-wide">
+  <article class="svc reveal" id="bloom-cart">
+    <img src="../assets/svc-cart.svg" alt="Ben Ibe Bloom Cart set up at an event" loading="lazy" width="800" height="300">
+    <h2>Bloom Carts</h2>
+    <p>Bloom Carts bring the flower shop to your event, with a beautifully styled cart of fresh stems, wrapping, and ribbons for guests to build their own bouquets. Our florists are on hand to help everyone pick their blooms, so each guest leaves with something they love. It's a warm, memorable touch for <b><i>weddings, birthdays, showers, graduations,</i></b> and <b><i>company events,</i></b> and it can be matched to your theme and color palette.</p>
+    <h3>What&rsquo;s included</h3>
+    <ul><li>A styled Bloom Cart set up at your venue, with pickup after the event</li><li>Fresh stems, wrapping, and ribbons for guests to build their own bouquets</li><li>A Ben Ibe Flowers florist on hand to help guests choose and arrange</li></ul>
+    <button class="svc-btn" data-modal="book-modal" data-book="Bloom Cart">Book a Bloom Cart</button>
+  </article>
+  <article class="svc reveal" id="workshops">
+    <img src="../assets/svc-workshop.svg" alt="Guests arranging flowers at a Ben Ibe workshop" loading="lazy" width="800" height="300">
+    <h2>Flower Workshops</h2>
+    <p>Flower Workshops are hands-on classes where you learn to arrange fresh flowers with guidance from the Ben Ibe Flowers team, with no experience needed. You'll practice choosing stems, balancing color and shape, and wrapping your finished piece, then take your creation home. Join with friends and family, or book a private group session for <b><i>birthdays, showers, team-building days, and other celebrations.</i></b></p>
+    <h3>What&rsquo;s included</h3>
+    <ul><li>Fresh flowers and all the materials you need, including wrapping and ribbons</li><li>Step-by-step guidance from our florists, with no experience needed</li><li>Your finished arrangement to take home</li></ul>
+    <button class="svc-btn" data-modal="book-modal" data-book="Flower Workshop">Reserve a Spot</button>
+  </article>
+</section>
+
+<section class="how reveal" aria-labelledby="how-t">
+  <h2 id="how-t">How Booking Works</h2>
+  <ol class="steps wrap-wide"><li><span>1</span>Choose a service</li><li><span>2</span>Send your booking details</li><li><span>3</span>Get confirmed by our branch</li></ol>
+</section>
+</main>
+<div data-bi="footer"></div>
+
+<div class="bi bi-modal" id="book-modal" role="dialog" aria-modal="true" aria-labelledby="bk-t" hidden><div class="bi-modal__box bi-modal__box--wide">
+  <button type="button" class="bi-modal__close" aria-label="Close" data-modal-close>&times;</button><h2 id="bk-t">Send your booking details</h2>
+  <form id="book-form" novalidate>
+    <label for="bk-service">Service</label>
+    <select id="bk-service" required><option>Bloom Cart</option><option>Flower Workshop</option></select>
+    <label for="bk-name">Full name</label><input id="bk-name" type="text" autocomplete="name" required><small class="err" id="bk-name-e"></small>
+    <div class="two"><div><label for="bk-email">Email</label><input id="bk-email" type="email" autocomplete="email" required><small class="err" id="bk-email-e"></small></div>
+    <div><label for="bk-phone">Mobile number</label><input id="bk-phone" type="tel" placeholder="09XX XXX XXXX" autocomplete="tel" required><small class="err" id="bk-phone-e"></small></div></div>
+    <div class="two"><div><label for="bk-date">Event date</label><input id="bk-date" type="date" required><small class="err" id="bk-date-e"></small></div>
+    <div><label for="bk-guests">Number of guests</label><input id="bk-guests" type="number" min="1" max="300" required><small class="err" id="bk-guests-e"></small></div></div>
+    <label for="bk-occasion">Occasion (optional)</label><input id="bk-occasion" type="text" placeholder="Birthday, wedding, team building&hellip;">
+    <label for="bk-location">Event location</label><input id="bk-location" type="text" placeholder="House no., street, barangay, city/town" autocomplete="street-address" required><small class="err" id="bk-location-e"></small>
+    <div class="two"><div><label for="bk-start">Start time</label><input id="bk-start" type="time" required><small class="err" id="bk-start-e"></small></div>
+    <div><label for="bk-end">End time</label><input id="bk-end" type="time" required><small class="err" id="bk-end-e"></small></div></div>
+    <div class="two"><div><label for="bk-qty">Bouquets needed (optional)</label><input id="bk-qty" type="number" min="1" max="500"><small class="err" id="bk-qty-e"></small></div>
+    <div><label for="bk-pay">Payment method</label><select id="bk-pay"><option>GCash</option><option>Card</option></select></div></div>
+    <label for="bk-branch">Preferred branch</label>
+    <select id="bk-branch"><option>Sto. Rosario St., Sto. Rosario</option><option>291-A Sto. Rosario St. cor. Lakandula St., San Jose</option></select>
+    <label for="bk-notes">Notes (theme, colors, venue)</label><textarea id="bk-notes" rows="3"></textarea>
+    <button class="bi-btn" type="submit">Send booking</button>
+    <p class="note">Demo only &ndash; sending this to a branch needs a backend.</p>
+  </form></div></div>
+<script src="../scripts/components.js"></script>
+<script src="../scripts/chat.js"></script>
+<script src="../scripts/main/site.js"></script>
+<script src="../scripts/main/services.js"></script>
+</body>
+</html>

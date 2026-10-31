@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout – Ben Ibe Flowers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/chat.css">
+<link rel="stylesheet" href="../css/shop/site.css">
+<link rel="stylesheet" href="../css/shop/checkout.css">
+</head>
+<body>
+<div data-bi="navbar" data-active=""></div>
+
+<main id="top" class="od-wrap">
+  <div class="od">
+    <section class="od-left" aria-label="Checkout details">
+      <h2 class="sec">Order for</h2>
+      <div class="obox contact" id="boxContact">
+        <div class="clines" id="contactLines"><p>Full name</p><p>Contact number</p><p>Email Address</p></div>
+        <button type="button" class="obtn" id="editContact">Edit</button>
+      </div>
+
+      <h2 class="sec">Delivery or Pickup</h2>
+      <div class="toggle" role="group" aria-label="Delivery or pickup">
+        <button type="button" class="obtn tg" data-mode="delivery" aria-pressed="true">Delivery</button>
+        <button type="button" class="obtn tg" data-mode="pickup" aria-pressed="false">Pickup</button>
+      </div>
+      <div class="obox where" id="boxWhere">
+        <div><h3 id="whereTitle">Deliver to</h3><p id="whereText"></p></div>
+        <button type="button" class="obtn" id="changeWhere">Change address</button>
+      </div>
+
+      <div class="row2">
+        <div class="obox sched" id="boxSched">
+          <p class="s2" id="dateLbl">Select delivery date:</p>
+          <div class="tiles" id="dateTiles"></div>
+          <p class="s2" id="timeLbl">Select delivery time:</p>
+          <div class="tiles tt" id="timeTiles"></div>
+        </div>
+        <div class="obox pay" id="boxPay" role="radiogroup" aria-label="Payment method">
+          <p class="s2">Select Payment Method:</p>
+          <button type="button" class="pr" role="radio" aria-checked="false" data-pay="GCash"><svg viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="15" fill="#0a6cf5"/><text x="15" y="17" font-family="Poppins,sans-serif" font-size="7.5" font-weight="700" fill="#fff" text-anchor="middle">GCash</text></svg><span>GCash ••••1234</span><i class="rd"></i></button>
+          <button type="button" class="pr" role="radio" aria-checked="false" data-pay="Card"><svg viewBox="0 0 30 24" aria-hidden="true"><rect x="1" y="2" width="28" height="20" rx="3" fill="#fff" stroke="#9fb3c8" stroke-width="1.5"/><path d="M1 8h28" stroke="#9fb3c8" stroke-width="2"/><path d="M5 16h8" stroke="#9fb3c8" stroke-width="1.5"/></svg><span>Card</span><i class="rd"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <aside class="osum" aria-label="Order summary">
+      <h2 class="sec">Order Summary <small id="sampleTag"></small></h2>
+      <div id="items"></div>
+      <div class="onote" id="noteBox"></div>
+      <dl class="tot"><div><dt>Subtotal • Delivery</dt><dd id="fee">₱0.00</dd></div><div><dt>Total</dt><dd id="total">₱0.00</dd></div></dl>
+      <button type="button" class="obtn big" id="placeOrder">Place Order</button>
+      <a class="obtn big alt" href="product.html">Back to Cart</a>
+    </aside>
+  </div>
+</main>
+<div data-bi="footer"></div>
+
+<div class="modal" id="modal" hidden><div class="backdrop" data-close></div><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="mTitle"><button class="x" data-close aria-label="Close">×</button><h2 id="mTitle"></h2><div id="mBody"></div><div class="m-actions" id="mActions"></div></div></div>
+<script src="../scripts/components.js"></script>
+<script src="../scripts/chat.js"></script>
+<script src="../scripts/shop/common.js"></script>
+<script>window.ICON_CAL='<svg width="__S__" height="__S__" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" fill="currentColor" fill-opacity=".12"/><path d="M8 3v4M16 3v4M3 10h18"/><path d="M7 13h3v2H7zM13 13h3v2h-3zM7 17h3v2H7zM13 17h3v2h-3z" fill="currentColor"/></svg>';</script>
+<script src="../scripts/shop/api.js"></script>
+<script src="../scripts/shop/checkout.js"></script>
+</body>
+</html>

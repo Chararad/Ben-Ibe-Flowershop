@@ -1,0 +1,48 @@
+/* ==========================================================================
+   admin/customers.css - admin/customers
+   Shared look and feel: css/base.css + css/components.css.
+   ========================================================================== */
+
+.ct .loc {
+  min-width: 170px;
+  font-size: clamp(13px, 0.95vw, 15.5px);
+  line-height: 1.35;
+}
+
+.stag.pill {
+  padding: 1px 10px;
+  font-weight: 500;
+  font-size: 11px;
+  border-radius: 11px;
+}
+
+.mini {
+  width: 100%;
+  margin-top: 2px;
+  font-size: 12.5px;
+  border-collapse: collapse;
+}
+
+.mini th {
+  padding: 8px 10px;
+  color: #fff;
+  text-shadow: 0 1px 1px rgb(91 70 54 / 0.4);
+  font-weight: 500;
+  font-size: 12.5px;
+  text-align: left;
+  background: var(--sand);
+}
+
+.mini td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #dcd5cb;
+}
+
+.mini a {
+  color: #2b2420;
+}
+
+.mini a:hover {
+  text-decoration: underline;
+  color: var(--red);
+}

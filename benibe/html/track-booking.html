@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Track Booking – Ben Ibe Flowers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/chat.css">
+<link rel="stylesheet" href="../css/shop/site.css">
+<link rel="stylesheet" href="../css/shop/track-booking.css">
+</head>
+<body>
+<div data-bi="navbar" data-active=""></div>
+
+<section class="thero" aria-label="Booking status">
+  <div class="thero-in">
+    <div><h1 id="oTitle">Track your booking</h1><p class="trk" id="oTrk">Reservation</p></div>
+    <span class="pill" id="oPill" role="status" hidden></span>
+  </div>
+</section>
+<main id="top" class="tk-wrap tkb">
+  <p class="tk-state" id="tkState" role="status" aria-live="polite">Loading your reservation…</p>
+  <div class="tk2" id="tkBody" hidden>
+    <h2 class="tl-h" id="tlH">Status Timeline</h2>
+    <ol class="tl" id="timeline" aria-labelledby="tlH"></ol>
+    <section class="tcard bcard" aria-labelledby="rH">
+      <h2 id="rH">Reservation Details</h2>
+      <div id="rBody"></div>
+      <div class="onote" id="noteBox"></div>
+      <dl class="tot"><div><dt>Subtotal • Delivery</dt><dd id="fee"></dd></div><div><dt>Total</dt><dd id="total"></dd></div></dl>
+    </section>
+  </div>
+  <form class="lookup" id="lookup" novalidate>
+    <label for="lkId">Track a different booking</label>
+    <div><input id="lkId" name="booking" placeholder="BKG-000045 or BIF-000123" maxlength="10" autocomplete="off" aria-describedby="lkE"><button type="submit" class="obtn">Track</button></div>
+    <p class="err" id="lkE" role="alert"></p>
+    <p class="lk-alt">Looking for an order? <a href="track.html">Track an order</a></p>
+  </form>
+</main>
+<div data-bi="footer"></div>
+
+<div class="modal" id="modal" hidden><div class="backdrop" data-close></div><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="mTitle"><button class="x" data-close aria-label="Close">×</button><h2 id="mTitle"></h2><div id="mBody"></div><div class="m-actions" id="mActions"></div></div></div>
+<script src="../scripts/components.js"></script>
+<script src="../scripts/chat.js"></script>
+<script src="../scripts/shop/common.js"></script>
+<script src="../scripts/shop/api.js"></script>
+<script src="../scripts/shop/tracklib.js"></script>
+<script src="../scripts/shop/track-booking.js"></script>
+</body>
+</html>

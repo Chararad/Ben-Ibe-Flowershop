@@ -1,0 +1,213 @@
+/* ==========================================================================
+   main/auth.css - Stand-alone pages: register, reset password and the 404 error page.
+   Shared look and feel: css/base.css + css/components.css.
+   ========================================================================== */
+
+body.auth {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  background: #eadccb url(../../assets/topo.svg) center/cover fixed;
+  animation: fade 0.6s;
+}
+
+.auth-wrap {
+  display: grid;
+  justify-items: center;
+  gap: 1.3rem;
+  width: 100%;
+}
+
+.auth-logo img {
+  width: clamp(170px, 12.5vw, 240px);
+  height: auto;
+  transition: transform var(--ease);
+}
+
+.auth-logo:hover img {
+  transform: scale(1.04);
+}
+
+.auth-card {
+  width: min(400px, 100%);
+  padding: 0.8rem 1rem 1rem;
+  background: #fffdf8;
+  border-radius: 4px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.22);
+  animation: rise 0.6s backwards;
+}
+
+.auth-card label {
+  display: block;
+  margin: 0.5rem 0 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.auth-card .inp {
+  position: relative;
+}
+
+.auth-card input {
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+  font: inherit;
+  font-size: 0.9rem;
+  border: 1px solid #d8d0c4;
+  border-radius: 5px;
+  background: #fffdf8;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.auth-card input.bad {
+  border-color: var(--red);
+}
+
+.auth-card .inp input[type=password],
+.auth-card .inp input.has-eye {
+  padding-right: 2.4rem;
+}
+
+.eye {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  color: #777;
+  transform: translateY(-50%);
+  transition: color var(--ease);
+}
+
+.eye:hover {
+  color: #333;
+}
+
+.eye.on .slash {
+  display: none;
+}
+
+.lead {
+  margin: 0.8rem 0.6rem 0.4rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.row-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 0.8rem;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.row-end a {
+  text-decoration: underline;
+}
+
+.row-end a:hover {
+  color: var(--red);
+}
+
+.dark-btn {
+  padding: 0.45rem 0.9rem;
+  color: #fff;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  background: #555;
+  border-radius: 4px;
+  transition: background var(--ease), transform var(--ease);
+}
+
+.dark-btn:hover:not(:disabled) {
+  background: #333;
+  transform: translateY(-1px);
+}
+
+.dark-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+#reset-form .dark-btn {
+  text-transform: none;
+  font-size: 0.78rem;
+}
+
+.sent {
+  color: #5f6f3a;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.status {
+  min-height: 1rem;
+  margin-top: 0.4rem;
+  font-size: 0.75rem;
+  color: #5f6f3a;
+  font-weight: 500;
+  text-align: right;
+}
+
+.err-wrap {
+  display: grid;
+  gap: 0.4rem;
+  justify-items: center;
+  padding: 0 1rem;
+  text-align: center;
+  animation: rise 0.7s backwards;
+}
+
+.err-wrap h1 {
+  font-size: clamp(3rem, 10vw, 7.2rem);
+  font-weight: 800;
+  line-height: 1.05;
+  color: #5f4739;
+}
+
+.err-wrap .sorry {
+  font-size: clamp(1.4rem, 2.1vw, 2.2rem);
+  font-weight: 500;
+  letter-spacing: 0.09em;
+}
+
+.err-wrap .why {
+  max-width: min(70rem, 92vw);
+  font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+  color: #6b6259;
+}
+
+.err-wrap .home {
+  display: inline-block;
+  margin-top: 1.2rem;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.85rem;
+  text-transform: none;
+  border-radius: 30px;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}

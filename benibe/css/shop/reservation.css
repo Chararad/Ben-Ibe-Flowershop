@@ -1,0 +1,172 @@
+/* ==========================================================================
+   shop/reservation.css - html/booking.html - service reservation.
+   Shared look and feel: css/base.css + css/components.css.
+   ========================================================================== */
+
+/* reservation container: was missing margin:0 auto (stuck to the left edge) and bottom room above the footer logo */
+.bk-wrap {
+  width: 76vw;
+  max-width: 1420px;
+  margin: 0 auto;
+  padding: 0 0 110px;
+}
+
+.bk {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+  margin-top: 14px;
+}
+
+.bk .lbl {
+  margin: 0 0 6px;
+}
+
+.date-msg {
+  margin-left: 6px;
+  color: var(--brown);
+  font-weight: 500;
+}
+
+.cal {
+  overflow: hidden;
+  border: 1px solid #d6cdc2;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.14);
+}
+
+.cal-h {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 50px;
+  padding: 0 18px;
+  background: var(--sand);
+}
+
+.cal-h h2 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.cal-h h2,
+.cal-h button,
+.dow span {
+  color: #fff;
+  text-shadow: 0 1px 1px rgb(91 70 54 / 0.4);
+}
+
+.cal-h button {
+  width: 24px;
+  height: 30px;
+  font-size: 20px;
+  line-height: 1;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.cal-h button:hover:not(:disabled) {
+  transform: scale(1.25);
+}
+
+.cal-h button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.cal-b {
+  padding: 14px 17px 22px;
+}
+
+.dow {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  align-items: center;
+  height: 37px;
+  text-align: center;
+  background: var(--sand);
+}
+
+.dow span {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.days.fade {
+  animation: fade 0.35s;
+}
+
+.bk .acc-h {
+  margin-top: 22px;
+}
+
+.bk .desc {
+  font-size: 10.5px;
+}
+
+.bk .bd {
+  width: min(160px, 42%);
+}
+
+.bk .rate-top {
+  padding-bottom: 12px;
+  border-bottom: 1px solid #d9d4cc;
+}
+
+.bk-form .frame {
+  width: 100%;
+}
+
+.bk-form .lbl {
+  margin: 16px 0 7px;
+}
+
+.bk-form .lbl:first-child {
+  margin-top: 0;
+}
+
+.bk-form textarea {
+  max-width: none;
+  height: 170px;
+}
+
+.bk-form .err {
+  margin-top: 4px;
+  font-size: 11px;
+}
+
+@media (max-width: 1100px) {
+  .bk-wrap {
+    width: auto;
+    padding: 0 24px 110px;
+  }
+}
+
+@media (max-width: 900px) {
+  .bk-wrap {
+    padding: 0 14px 110px;
+  }
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .bk {
+    grid-template-columns: 1fr;
+    max-width: 720px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .cal-b {
+    padding: 10px 8px 14px;
+  }
+
+  .dow span {
+    font-size: 11px;
+  }
+}

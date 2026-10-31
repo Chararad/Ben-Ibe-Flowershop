@@ -1,0 +1,46 @@
+/* ==========================================================================
+   base.css - design tokens and global rules shared by EVERY page
+   Load order on every page: base.css -> components.css -> (chat.css) -> site CSS -> page CSS
+   Naming: shared components use the "bi-" prefix (bi-block__element--modifier).
+   ========================================================================== */
+
+:root {
+  /* Brand palette */
+  --bi-cream: #fffdf5;
+  --bi-sand: #eadccb;
+  --bi-ink: #111;
+  --bi-muted: #5a4f45;
+  --bi-red: #a83a32;
+  --bi-gold: #f5a623;
+  --bi-line: #cfc6b8;
+  --bi-brown: #5a4033;
+  --bi-brown-dark: #5f4739;
+  --bi-sidebar-dark: #5e463a;
+
+  /* Typography, shape and motion */
+  --bi-font: Poppins, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --bi-radius: 6px;
+  --bi-ease: 0.3s ease;
+}
+
+html {
+  font-size: clamp(16px, 1.04vw, 22px);
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+/* Page scrolling is locked while a popup or the admin drawer is open */
+body.lock {
+  overflow: hidden;
+}
+
+/* Respect the visitor's "reduce motion" setting everywhere */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}

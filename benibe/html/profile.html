@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Profile – Ben Ibe Flowers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/chat.css">
+<link rel="stylesheet" href="../css/main/site.css">
+<link rel="stylesheet" href="../css/main/profile.css">
+</head>
+<body data-page="profile">
+<div data-bi="navbar" data-active=""></div>
+<main class="prof wrap-narrow" id="top">
+  <div data-bi="sidebar" data-variant="account" data-active="profile"></div>
+  <div class="pmain">
+    <p class="crumb2"><a href="index.html">Homepage</a> &gt; Profile</p>
+    <section id="sec-profile" aria-labelledby="h-prof">
+      <h1 id="h-prof" class="ph1">MANAGE PROFILE</h1>
+      <form id="profile-form" class="pf" novalidate>
+        <div class="fld"><label for="pf-first">First Name</label><input id="pf-first" type="text" autocomplete="given-name"><small class="err" id="pf-first-e"></small></div><div class="fld"><label for="pf-last">Last Name</label><input id="pf-last" type="text" autocomplete="family-name"><small class="err" id="pf-last-e"></small></div>
+        <div class="fld"><label for="pf-email">Email</label><input id="pf-email" type="email" autocomplete="email"><small class="err" id="pf-email-e"></small></div><div class="fld"><label for="pf-phone">Phone Number</label><input id="pf-phone" type="tel" autocomplete="tel"><small class="err" id="pf-phone-e"></small></div>
+        <div class="fld"><label for="pf-pass">Password</label><input id="pf-pass" type="password" autocomplete="new-password" placeholder="Leave blank to keep current"><small class="err" id="pf-pass-e"></small></div><div class="fld"><label for="pf-pass2">Confirm Password</label><input id="pf-pass2" type="password" autocomplete="new-password"><small class="err" id="pf-pass2-e"></small></div>
+        <button class="sand-btn upd" type="submit">Update Information</button>
+      </form>
+    </section>
+    <section id="sec-address" aria-labelledby="h-addr">
+      <h2 id="h-addr" class="ph1">MY ADDRESS</h2>
+      <div class="addr-bar"><label class="sr" for="addr-select">Saved addresses</label><select id="addr-select"></select><button class="sand-btn" data-modal="addr-modal">+ Add Shipping Address</button></div>
+      <div class="addr-box"><div class="addr-head"><span>Delivery Address</span><button class="more" id="addr-more" aria-expanded="false" aria-controls="addr-detail"><span>See more</span><svg viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button></div>
+        <div class="addr-body"><p id="addr-line"></p><dl id="addr-detail" hidden></dl></div></div>
+    </section>
+    <section id="sec-trans" aria-labelledby="h-trans">
+      <div class="sec-head"><h2 id="h-trans" class="ph1">TRANSACTION HISTORY</h2><button class="more" id="trans-more" aria-expanded="false" aria-controls="trans-table"><span>See more</span><svg viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button></div>
+      <div class="tbl-wrap"><table id="trans-table"><thead><tr><th scope="col">Order Name</th><th scope="col">Type</th><th scope="col">Status</th><th scope="col">Address</th></tr></thead><tbody></tbody></table></div>
+    </section>
+    <section id="sec-log" aria-labelledby="h-log">
+      <div class="sec-head"><h2 id="h-log" class="ph1">LOG HISTORY</h2><button class="more" id="log-more" aria-expanded="false" aria-controls="log-table"><span>See more</span><svg viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button></div>
+      <div class="tbl-wrap"><table id="log-table"><thead><tr><th scope="col">Log ID</th><th scope="col">Activity time</th><th scope="col">Activity</th></tr></thead><tbody></tbody></table></div>
+      <p class="demo-note">Demo data shown. Real accounts, saved addresses, history and password changes need a backend.</p>
+    </section>
+  </div>
+</main>
+<div data-bi="footer"></div>
+
+<div class="bi bi-modal" id="addr-modal" role="dialog" aria-modal="true" aria-labelledby="am-t" hidden><div class="bi-modal__box bi-modal__box--wide">
+  <button type="button" class="bi-modal__close" aria-label="Close" data-modal-close>&times;</button><h2 id="am-t">Add shipping address</h2>
+  <form id="addr-form" novalidate>
+    <div class="two"><div><label for="ad-label">Label</label><input id="ad-label" type="text" placeholder="Home, Work&hellip;" required><small class="err" id="ad-label-e"></small></div>
+    <div><label for="ad-name">Recipient</label><input id="ad-name" type="text" autocomplete="name" required><small class="err" id="ad-name-e"></small></div></div>
+    <label for="ad-phone">Mobile number</label><input id="ad-phone" type="tel" placeholder="09XX XXX XXXX" autocomplete="tel" required><small class="err" id="ad-phone-e"></small>
+    <label for="ad-street">House no. and street</label><input id="ad-street" type="text" autocomplete="street-address" required><small class="err" id="ad-street-e"></small>
+    <div class="two"><div><label for="ad-brgy">Barangay</label><input id="ad-brgy" type="text" required><small class="err" id="ad-brgy-e"></small></div>
+    <div><label for="ad-city">City / town</label><input id="ad-city" type="text" required><small class="err" id="ad-city-e"></small></div></div>
+    <button class="bi-btn" type="submit">Save address</button>
+    <p class="note">Demo only &ndash; saved addresses need a backend.</p>
+  </form></div></div>
+<script src="../scripts/components.js"></script>
+<script src="../scripts/chat.js"></script>
+<script src="../scripts/main/site.js"></script>
+<script src="../scripts/main/profile.js"></script>
+</body>
+</html>

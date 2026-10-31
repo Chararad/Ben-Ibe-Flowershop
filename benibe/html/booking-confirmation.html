@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reservation Confirmed – Ben Ibe Flowers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/chat.css">
+<link rel="stylesheet" href="../css/main/site.css">
+<link rel="stylesheet" href="../css/main/confirmation.css">
+</head>
+<body>
+<div data-bi="navbar" data-active=""></div>
+<main id="top">
+<section class="bk-hero">
+  <img src="../assets/booking-hero.svg" alt="Guests arranging flowers at a Ben Ibe event" width="1600" height="400">
+  <div class="bk-hero-txt">
+    <svg class="tick" viewBox="0 0 52 52" width="52" height="52" aria-hidden="true"><circle cx="26" cy="26" r="23"/><path d="M15 27l8 8 14-16"/></svg>
+    <h1>Thank you, <em id="bk-first">friend</em>! Your reservation is placed.</h1>
+    <p class="pill" id="bk-ref">Order BIF-000000</p>
+  </div>
+</section>
+
+<section class="bk wrap-wide">
+  <div class="bk-left">
+    <article class="bk-card" style="--i:0"><h2>Type of Event</h2><p id="bk-type"></p></article>
+    <article class="bk-card" style="--i:1"><h2>Event Location</h2><p id="bk-loc"></p></article>
+    <article class="bk-card" style="--i:2"><h2>Date and Time</h2><p id="bk-when"></p></article>
+    <article class="bk-card pay" style="--i:3"><h2>Payment</h2><p id="bk-pay"></p><span class="badge" id="bk-paid">Paid</span></article>
+  </div>
+  <div class="bk-right">
+    <h2>Reservation Confirmation</h2>
+    <dl class="bk-list">
+      <div><dt>Booked by:</dt><dd id="bk-by"></dd></div>
+      <div><dt>Contact:</dt><dd id="bk-contact"></dd></div>
+      <div><dt>Expected Guest:</dt><dd id="bk-guests"></dd></div>
+      <div><dt>Expected Quantity of Bouquets:</dt><dd id="bk-qty"></dd></div>
+    </dl>
+    <div class="note-box" id="bk-note"></div>
+    <div class="tot"><span>Subtotal &bull; Delivery</span><b id="bk-delivery"></b></div>
+    <div class="tot"><span>Total</span><b id="bk-total"></b></div>
+    <p class="sample-note" id="bk-sample" hidden>Sample reservation shown. Send a booking from the <a href="services.html">Services page</a> to see your own details here.</p>
+    <button class="svc-btn track" id="bk-track">Track Reservation</button>
+  </div>
+</section>
+</main>
+<div data-bi="footer"></div>
+
+<script src="../scripts/components.js"></script>
+<script src="../scripts/chat.js"></script>
+<script src="../scripts/main/site.js"></script>
+<script src="../scripts/main/booking-confirmation.js"></script>
+</body>
+</html>

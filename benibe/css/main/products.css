@@ -1,0 +1,358 @@
+/* ==========================================================================
+   main/products.css - Products page (products.html): filters, product grid, pagination.
+   Shared look and feel: css/base.css + css/components.css.
+   ========================================================================== */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--cream);
+  border-bottom: 1px solid var(--ink);
+  transition: box-shadow var(--ease);
+}
+
+.search {
+  display: flex;
+  padding: 0 0.6rem;
+  border: 1px solid var(--ink);
+  border-radius: 20px;
+  background: #fff;
+}
+
+.search input {
+  width: 6.9rem;
+  padding: 0.25rem;
+  font-size: 0.7rem;
+  border: 0;
+  outline: 0;
+  background: none;
+}
+
+.search button {
+  font-size: 0.9rem;
+}
+
+.box {
+  position: relative;
+  width: min(420px, 92%);
+  padding: 2rem;
+  background: var(--cream);
+  border-radius: 12px;
+  transform: scale(0.92);
+  transition: transform var(--ease);
+}
+
+.box h2 {
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.box form {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.box label {
+  font-size: 0.8rem;
+}
+
+.box input {
+  padding: 0.55rem;
+  font: inherit;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+}
+
+.box .btn-order {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.shop-title {
+  margin: 2.2rem 0 1rem;
+  font-size: clamp(2rem, 4vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #5a4033;
+}
+
+.filters {
+  position: sticky;
+  top: 80px;
+  overflow: auto;
+  max-height: calc(100vh - 100px);
+  padding: 1.2rem 1.2rem 1.6rem;
+  background: var(--sand);
+  border-radius: 6px;
+  box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.22);
+}
+
+.filters h2 {
+  margin-bottom: 0.8rem;
+  font-size: clamp(1.5rem, 1.7vw, 2.1rem);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.f-group {
+  padding-left: 1.4rem;
+  margin-bottom: 1.1rem;
+}
+
+.f-group h3 {
+  margin-bottom: 0.4rem;
+  font-size: clamp(0.8rem, 0.95vw, 1.2rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.f-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.65rem;
+  font-weight: 600;
+}
+
+.f-row span {
+  font-weight: 400;
+}
+
+.chk {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: clamp(0.85rem, 1vw, 1.2rem);
+  letter-spacing: 0.08em;
+  line-height: 1.9;
+  cursor: pointer;
+}
+
+.chk input {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  border: 1px solid #bfae99;
+  border-radius: 2px;
+  background: #f4ece0;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.chk input[type=radio] {
+  border-radius: 50%;
+}
+
+.chk input:checked {
+  background: #5a4033;
+  border-color: #5a4033;
+}
+
+.chk input:checked::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.chk input:indeterminate {
+  background: #5a4033;
+  border-color: #5a4033;
+}
+
+.chk input:indeterminate::after {
+  content: "";
+  width: 7px;
+  height: 2px;
+  background: #fff;
+}
+
+.chk.parent {
+  margin-top: 0.4rem;
+  font-weight: 500;
+  font-size: clamp(0.9rem, 1.05vw, 1.25rem);
+}
+
+.subs {
+  padding-left: 1.2rem;
+}
+
+.subs .chk {
+  font-size: clamp(0.8rem, 0.95vw, 1.15rem);
+  line-height: 1.75;
+}
+
+.chk .stars {
+  color: #5a4033;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+}
+
+.dual {
+  position: relative;
+  height: 18px;
+  margin: 0.5rem 0 0.2rem;
+}
+
+.dual .track {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  right: 0;
+  height: 5px;
+  border-radius: 3px;
+  background: #f6efe4;
+}
+
+.dual .fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: var(--ink);
+  border-radius: 3px;
+}
+
+.dual input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  margin: 0;
+  background: none;
+  pointer-events: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.dual input::-webkit-slider-runnable-track {
+  height: 18px;
+  background: none;
+}
+
+.dual input::-moz-range-track {
+  background: none;
+}
+
+.dual input::-webkit-slider-thumb {
+  width: 14px;
+  height: 14px;
+  margin-top: 2px;
+  border-radius: 50%;
+  background: var(--ink);
+  border: 0;
+  -webkit-appearance: none;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.dual input::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--ink);
+  border: 0;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.dual input:focus-visible::-webkit-slider-thumb {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+}
+
+.dual input:focus-visible::-moz-range-thumb {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+}
+
+.pager {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+}
+
+.pager button {
+  min-width: 34px;
+  height: 34px;
+  font-size: 0.8rem;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid var(--line);
+  transition: background var(--ease);
+}
+
+.pager button:hover:not(:disabled) {
+  background: var(--sand);
+}
+
+.pager [aria-current] {
+  font-weight: 600;
+  background: var(--sand);
+  border-color: var(--sand);
+}
+
+.pager button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.pager span {
+  align-self: center;
+  padding: 0 0.2rem;
+}
+
+.filter-toggle {
+  display: none;
+  padding: 0.5rem 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  font-size: 0.85rem;
+  background: var(--sand);
+  border-radius: 20px;
+}
+
+.box select,
+.box textarea {
+  padding: 0.55rem;
+  font: inherit;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: #fff;
+}
+
+/* products page sizing for large screens */
+.shop-wrap {
+  width: min(84rem, 92%);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 720px) {
+  .search {
+    flex: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .filter-toggle {
+    display: inline-block;
+  }
+
+  .filters {
+    display: none;
+    position: static;
+    max-height: none;
+  }
+
+  .filters.open {
+    display: block;
+  }
+}

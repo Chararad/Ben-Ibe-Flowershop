@@ -1,0 +1,260 @@
+/* ==========================================================================
+   chat.css - floating customer chat popup (see js/chat.js)
+   Loaded on every page that has the navbar.
+   ========================================================================== */
+
+.bi-chat {
+  position: fixed;
+  right: 1.2rem;
+  bottom: 1.2rem;
+  z-index: 120;
+  display: flex;
+  flex-direction: column;
+  width: min(22rem, calc(100vw - 2rem));
+  height: min(32rem, calc(100vh - 6rem));
+  overflow: hidden;
+  background: var(--bi-cream);
+  border: 1px solid var(--bi-line);
+  border-radius: 16px;
+  box-shadow: 0 14px 40px rgb(0 0 0 / 0.28);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(16px) scale(0.96);
+  transform-origin: bottom right;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.bi-chat[hidden] {
+  display: none;
+}
+
+.bi-chat.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+
+/* Header */
+.bi-chat__head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.8rem 1rem;
+  color: var(--bi-cream);
+  background: var(--bi-brown-dark);
+}
+
+.bi-chat__avatar {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--bi-red);
+  background: var(--bi-sand);
+  border-radius: 50%;
+}
+
+.bi-chat__title {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.25;
+}
+
+.bi-chat__title strong {
+  font-size: 0.95rem;
+}
+
+.bi-chat__title small {
+  font-size: 0.68rem;
+  opacity: 0.8;
+}
+
+.bi-chat__close {
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.5rem;
+  line-height: 1;
+  border-radius: 50%;
+  transition: background var(--bi-ease), transform var(--bi-ease);
+}
+
+.bi-chat__close:hover {
+  background: rgb(255 255 255 / 0.18);
+  transform: rotate(90deg);
+}
+
+/* Messages */
+.bi-chat__log {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.bi-chat__msg {
+  max-width: 82%;
+  padding: 0.55rem 0.8rem;
+  font-size: 0.82rem;
+  overflow-wrap: anywhere;
+  border-radius: 14px;
+  animation: bi-chat-in 0.25s ease;
+}
+
+.bi-chat__msg p {
+  white-space: pre-wrap;
+}
+
+.bi-chat__msg time {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.62rem;
+  opacity: 0.6;
+}
+
+.bi-chat__msg--shop {
+  align-self: flex-start;
+  background: #fff;
+  border: 1px solid var(--bi-line);
+  border-bottom-left-radius: 4px;
+}
+
+.bi-chat__msg--customer {
+  align-self: flex-end;
+  color: #fff;
+  background: var(--bi-brown-dark);
+  border-bottom-right-radius: 4px;
+}
+
+.bi-chat__typing {
+  display: flex;
+  align-self: flex-start;
+  gap: 4px;
+  padding: 0.7rem 0.9rem;
+  background: #fff;
+  border: 1px solid var(--bi-line);
+  border-radius: 14px;
+}
+
+.bi-chat__typing span {
+  width: 6px;
+  height: 6px;
+  background: var(--bi-muted);
+  border-radius: 50%;
+  animation: bi-chat-bounce 1s infinite ease-in-out;
+}
+
+.bi-chat__typing span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.bi-chat__typing span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Quick replies */
+.bi-chat__quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0 1rem 0.7rem;
+}
+
+.bi-chat__quick[hidden] {
+  display: none;
+}
+
+.bi-chat__quick button {
+  padding: 0.3rem 0.8rem;
+  font-size: 0.74rem;
+  color: var(--bi-brown);
+  background: var(--bi-sand);
+  border-radius: 20px;
+  transition: background var(--bi-ease), transform var(--bi-ease);
+}
+
+.bi-chat__quick button:hover {
+  background: #dcc9b0;
+  transform: translateY(-1px);
+}
+
+/* Message box */
+.bi-chat__form {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.7rem 1rem;
+  background: #fff;
+  border-top: 1px solid var(--bi-line);
+}
+
+.bi-chat__form input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.55rem 0.9rem;
+  font: inherit;
+  font-size: 0.85rem;
+  background: var(--bi-cream);
+  border: 1px solid var(--bi-line);
+  border-radius: 20px;
+}
+
+.bi-chat__form input:focus-visible {
+  border-color: var(--bi-brown);
+  outline: 0;
+}
+
+.bi-chat__send {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #fff;
+  background: var(--bi-brown-dark);
+  border-radius: 50%;
+  transition: background var(--bi-ease), transform var(--bi-ease);
+}
+
+.bi-chat__send:hover {
+  background: #7a5c4a;
+  transform: scale(1.08);
+}
+
+@keyframes bi-chat-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+@keyframes bi-chat-bounce {
+  0%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-5px);
+  }
+}
+
+/* ==========================================================================
+   Responsive: on phones the chat becomes a bottom sheet
+   ========================================================================== */
+@media (max-width: 520px) {
+  .bi-chat {
+    right: 0.5rem;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    width: auto;
+    height: min(75vh, 34rem);
+  }
+}

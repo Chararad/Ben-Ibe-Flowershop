@@ -1,0 +1,716 @@
+/* ==========================================================================
+   components.css - styles for the shared components rendered by js/components.js
+   Navbar (+ top bar), footer, sidebar (account + admin), popup (modal), form
+   bits, button and toast. The same look on every page of the site, the shop and the admin area.
+   ========================================================================== */
+
+/* ---------- Scoped reset: components look the same whatever the page's own CSS does ---------- */
+.bi,
+.bi *,
+.bi *::before,
+.bi *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.bi {
+  font-family: var(--bi-font);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--bi-ink);
+}
+
+.bi a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* :where() keeps this reset at zero specificity, so button classes below (bi-btn, bi-chat__send, ...) always win */
+:where(.bi) button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.bi ul {
+  list-style: none;
+}
+
+.bi img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.bi :focus-visible {
+  outline: 2px solid var(--bi-red);
+  outline-offset: 2px;
+}
+
+.bi-container {
+  width: min(73.75rem, 92%);
+  margin-inline: auto;
+}
+
+.bi-sr {
+  position: absolute;
+  left: -9999px;
+}
+
+/* ---------- Top bar ---------- */
+.bi-topbar {
+  padding: 0.5rem 0;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  background: var(--bi-sand);
+}
+
+.bi-topbar__in {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+.bi-topbar__link {
+  font-size: inherit;
+  text-transform: inherit;
+  transition: color var(--bi-ease);
+}
+
+.bi-topbar__link:hover {
+  color: var(--bi-red);
+  text-decoration: underline;
+}
+
+/* ---------- Navbar ---------- */
+.bi-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bi-cream);
+  border-bottom: 1px solid var(--bi-ink);
+  transition: box-shadow var(--bi-ease);
+}
+
+.bi-header.is-stuck {
+  box-shadow: 0 4px 18px rgb(0 0 0 / 0.1);
+}
+
+.bi-header__in {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 0.6rem 0;
+}
+
+.bi-brand img {
+  width: 9rem;
+  height: auto;
+  aspect-ratio: 167 / 48;
+}
+
+.bi-menu {
+  display: flex;
+  gap: 2rem;
+  margin-right: auto;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.bi-menu a {
+  position: relative;
+  padding: 0.3rem 0;
+}
+
+.bi-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--bi-red);
+  transition: width var(--bi-ease);
+}
+
+.bi-menu a:hover::after,
+.bi-menu a.is-active::after {
+  width: 100%;
+}
+
+.bi-burger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.bi-burger span {
+  width: 22px;
+  height: 2px;
+  background: var(--bi-ink);
+  transition: var(--bi-ease);
+}
+
+.bi-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.bi-search {
+  display: flex;
+  align-items: center;
+  padding: 0 0.6rem;
+  background: #fff;
+  border: 1px solid var(--bi-ink);
+  border-radius: 20px;
+}
+
+.bi-search input {
+  width: 6.9rem;
+  padding: 0.25rem;
+  font: inherit;
+  font-size: 0.7rem;
+  background: none;
+  border: 0;
+  outline: 0;
+}
+
+.bi-search button {
+  display: grid;
+  place-items: center;
+}
+
+.bi-icon-btn {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 0.15rem;
+  transition: transform var(--bi-ease);
+}
+
+.bi-icon-btn:hover {
+  transform: scale(1.15);
+}
+
+.bi-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  display: grid;
+  place-items: center;
+  min-width: 15px;
+  height: 15px;
+  padding: 0 4px;
+  font: 600 0.6rem var(--bi-font);
+  color: #fff;
+  background: var(--bi-red);
+  border-radius: 8px;
+}
+
+.bi-badge[hidden] {
+  display: none;
+}
+
+.bi-badge.is-pop {
+  animation: bi-pop 0.4s;
+}
+
+.bi-dot {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 9px;
+  height: 9px;
+  background: var(--bi-red);
+  border: 2px solid var(--bi-cream);
+  border-radius: 50%;
+}
+
+.bi-dot[hidden] {
+  display: none;
+}
+
+/* ---------- Footer ---------- */
+.bi-footer {
+  margin-top: 3rem;
+  padding: 2rem 0 1rem;
+  font-size: 0.72rem;
+  color: var(--bi-muted);
+  background: var(--bi-sand);
+}
+
+.bi-footer__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.3fr 1.3fr 1.5fr 0.8fr 1.1fr;
+  gap: 2rem;
+}
+
+/* New logo: keeps its 198:181 shape, never stretches, never outgrows its column */
+.bi-footer__logo {
+  align-self: start;
+  justify-self: start;
+  width: min(100%, 12rem);
+  margin-top: -4rem;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 16px;
+}
+
+.bi-footer__logo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 198 / 181;
+  object-fit: contain;
+}
+
+.bi-footer h3 {
+  margin-bottom: 0.8rem;
+  font-size: 0.72rem;
+  color: #333;
+}
+
+.bi-footer p {
+  margin-bottom: 1rem;
+  overflow-wrap: anywhere;
+}
+
+.bi-footer__col li {
+  margin-bottom: 0.8rem;
+}
+
+.bi-footer a:hover {
+  color: var(--bi-red);
+}
+
+.bi-social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.8rem;
+}
+
+.bi-social li {
+  margin: 0;
+}
+
+.bi-social a {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  color: #333;
+  border-radius: 8px;
+  transition: var(--bi-ease);
+}
+
+.bi-social a:hover {
+  color: var(--bi-red);
+  background: #fff;
+}
+
+.bi-social svg {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.bi-footer__copy {
+  margin-top: 2rem;
+  margin-bottom: 0;
+  font-size: 0.85rem;
+}
+
+/* ---------- Sidebar ---------- */
+.bi-sidebar__nav ul {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Account sidebar (profile page) */
+.bi-sidebar--account {
+  position: sticky;
+  top: 90px;
+  background: var(--bi-cream);
+  border: 1px solid #555;
+}
+
+.bi-sidebar--account .bi-sidebar__avatar {
+  display: grid;
+  place-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #555;
+}
+
+.bi-sidebar--account .bi-sidebar__nav {
+  padding-bottom: 1.2rem;
+}
+
+.bi-sidebar--account .bi-sidebar__link {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.55rem 0.7rem;
+  font-size: 0.78rem;
+  color: #444;
+  transition: background var(--bi-ease);
+}
+
+.bi-sidebar--account .bi-sidebar__link:hover {
+  background: #f3ebdf;
+}
+
+.bi-sidebar--account .bi-sidebar__link.is-active {
+  background: var(--bi-sand);
+}
+
+/* Admin sidebar (admin pages): sticky column on desktop, slide-in drawer on small screens */
+.bi-sidebar--admin {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  height: 100vh;
+  padding: 54px 23px 30px;
+  overflow-y: auto;
+  background: var(--bi-sand);
+}
+
+.bi-sidebar--admin .bi-sidebar__logo {
+  display: block;
+  width: 124px;
+  margin: 0 auto 40px 20px;
+}
+
+.bi-sidebar--admin .bi-sidebar__logo img {
+  display: block;
+  width: 124px;
+  height: 124px;
+  border-radius: 14px;
+}
+
+.bi-sidebar--admin .bi-sidebar__nav ul {
+  gap: 13px;
+}
+
+.bi-sidebar--admin .bi-sidebar__link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 165px;
+  height: 41px;
+  padding: 0 12px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  color: #fff;
+  background: var(--bi-sidebar-dark);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.18);
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.bi-sidebar--admin .bi-sidebar__link:hover {
+  background: #6d5445;
+  transform: translateX(3px);
+}
+
+.bi-sidebar--admin .bi-sidebar__link.is-active {
+  color: #2b2420;
+  background: #fff;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.12);
+}
+
+.bi-sidebar--admin .bi-sidebar__link.is-active:hover {
+  background: #fff;
+}
+
+.bi-sidebar--admin .bi-sidebar__link svg {
+  flex: none;
+}
+
+.bi-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 35;
+  background: rgb(43 36 32 / 0.5);
+  animation: bi-fade 0.25s;
+}
+
+.bi-scrim[hidden] {
+  display: none;
+}
+
+/* ---------- Button ---------- */
+.bi-btn {
+  margin-top: 0.5rem;
+  padding: 0.35rem 2.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--bi-red);
+  background: var(--bi-sand);
+  border: 2px solid #e8944a;
+  border-radius: 30px;
+  box-shadow: 0 3px 0 #e8944a;
+  transition: transform var(--bi-ease), box-shadow var(--bi-ease);
+}
+
+.bi-btn:hover {
+  box-shadow: 0 6px 12px rgb(168 58 50 / 0.3);
+  transform: translateY(-2px);
+}
+
+/* ---------- Popup (modal) and its form ---------- */
+.bi-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: rgb(0 0 0 / 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--bi-ease);
+}
+
+.bi-modal[hidden] {
+  display: none;
+}
+
+.bi-modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.bi-modal__box {
+  position: relative;
+  width: min(420px, 92%);
+  padding: 2rem;
+  background: var(--bi-cream);
+  border-radius: 12px;
+  transform: scale(0.92);
+  transition: transform var(--bi-ease);
+}
+
+.bi-modal.is-open .bi-modal__box {
+  transform: scale(1);
+}
+
+.bi-modal__box--wide {
+  width: min(540px, 94%);
+  max-height: 92vh;
+  overflow: auto;
+}
+
+.bi-modal__close {
+  position: absolute;
+  top: 0.6rem;
+  right: 1rem;
+  font-size: 1.6rem;
+}
+
+.bi-modal h2 {
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.bi-modal form {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.bi-modal label {
+  font-size: 0.8rem;
+}
+
+.bi-modal input,
+.bi-modal select,
+.bi-modal textarea {
+  padding: 0.55rem;
+  font: inherit;
+  background: #fff;
+  border: 1px solid var(--bi-line);
+  border-radius: var(--bi-radius);
+}
+
+.bi-modal input.bad,
+.bi-modal select.bad,
+.bi-modal textarea.bad {
+  border-color: var(--bi-red);
+}
+
+.bi-modal .err {
+  min-height: 1rem;
+  font-size: 0.7rem;
+  color: var(--bi-red);
+}
+
+.bi-modal .note {
+  font-size: 0.7rem;
+  color: var(--bi-muted);
+}
+
+.bi-modal .note a {
+  text-decoration: underline;
+}
+
+.bi-modal .note a:hover {
+  color: var(--bi-red);
+}
+
+.bi-modal .two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.bi-modal .two > div {
+  display: grid;
+  gap: 0.4rem;
+}
+
+/* ---------- Toast ---------- */
+.bi-toast {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  z-index: 200;
+  max-width: 90vw;
+  padding: 0.7rem 1.2rem;
+  font-size: 0.8rem;
+  color: #fff;
+  background: var(--bi-ink);
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 30px);
+  transition: var(--bi-ease);
+}
+
+.bi-toast.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* ---------- Animations ---------- */
+@keyframes bi-pop {
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes bi-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 1000px) {
+  .bi-footer__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .bi-footer__logo {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .bi-sidebar--admin {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 212px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .bi-sidebar--admin.is-open {
+    box-shadow: 6px 0 24px rgb(0 0 0 / 0.25);
+    transform: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .bi-sidebar--account {
+    position: static;
+  }
+
+  .bi-sidebar--account .bi-sidebar__avatar {
+    display: none;
+  }
+
+  .bi-sidebar--account .bi-sidebar__nav {
+    padding: 0;
+    overflow-x: auto;
+  }
+
+  .bi-sidebar--account .bi-sidebar__nav ul {
+    flex-direction: row;
+  }
+
+  .bi-sidebar--account .bi-sidebar__link {
+    flex: none;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 720px) {
+  .bi-burger {
+    display: flex;
+  }
+
+  .bi-header__in {
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .bi-tools {
+    order: 3;
+    width: 100%;
+  }
+
+  .bi-search {
+    flex: 1;
+  }
+
+  .bi-menu {
+    display: none;
+    flex-direction: column;
+    gap: 0.8rem;
+    order: 4;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+
+  .bi-menu.is-open {
+    display: flex;
+  }
+
+  .bi-topbar__in {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .bi-footer__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bi-footer__logo {
+    width: min(100%, 10rem);
+  }
+}
+
+@media (max-width: 520px) {
+  .bi-modal .two {
+    grid-template-columns: 1fr;
+  }
+}
